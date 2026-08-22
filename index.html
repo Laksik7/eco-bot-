@@ -1584,12 +1584,7 @@ header.scrolled .header-inner { padding: 11px 32px; }
   backdrop-filter: blur(24px) saturate(1.2);
 }
 .hero-dashboard::before {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(210,231,202,.1);
-  border-radius: 21px 21px 21px 6px;
-  pointer-events: none;
+  content: none;
 }
 .dashboard-header { color: #dcebd6; font-family: 'Roboto Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .09em; }
 .dashboard-dot { background: #a9d68f; box-shadow: 0 0 0 6px rgba(169,214,143,.12); }
@@ -2271,6 +2266,54 @@ footer svg { color: #75b88c !important; }
   .filters-panel { padding-inline: 24px; }
   .filters-section::before, .filters-section::after { width: 86px; opacity: .14; }
   footer { margin-top: 42px; padding: 58px 22px 64px; }
+}
+
+/* Точечная геометрия блоков по визуальной проверке. */
+.achievements-bar {
+  margin-top: 24px;
+}
+
+.quiz-box,
+.quiz-result {
+  width: 100%;
+  max-width: 640px;
+  padding: 28px;
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+}
+
+.filters-section.visible {
+  padding-bottom: 24px;
+}
+
+@media (max-width: 640px) {
+  .achievements-bar { margin-top: 18px; }
+  .quiz-box,
+  .quiz-result {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+  .filters-section.visible { padding-bottom: 16px; }
+}
+
+/* Мобильная страховка от горизонтального сдвига. Она не меняет сетки,
+   размеры, перенос вкладок и десктопную композицию сайта. */
+@media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  img, video, canvas { max-width: 100%; }
+}
+
+@media (max-width: 640px) and (hover: none) {
+  @supports (overflow: clip) {
+    html, body { overflow-x: clip; }
+  }
 }
 
 </style>
