@@ -2282,7 +2282,34 @@ footer svg { color: #75b88c !important; }
 }
 
 @media (max-width: 640px) {
-  .achievements-bar { margin-top: 18px; }
+  .achievements-bar {
+    margin-top: 18px;
+    padding: 20px 14px;
+    overflow: hidden;
+  }
+  .achievements-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 14px;
+  }
+  .achievement {
+    min-width: 0;
+    padding: 18px 4px;
+  }
+  .achievement + .achievement {
+    border-top: 0;
+    border-left: 0;
+  }
+  .achievement:nth-child(n + 3) {
+    border-top: 1px solid var(--border-soft);
+  }
+  .achievement-num {
+    font-size: clamp(29px, 9vw, 38px);
+  }
+  .achievement-label {
+    max-width: 150px;
+    margin-inline: auto;
+    font-size: 12px;
+  }
   .quiz-box,
   .quiz-result {
     padding: 20px 16px;
