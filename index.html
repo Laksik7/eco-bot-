@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://kfbveridbvxtxiyktdsn.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
 <title>ЭкоИркутск — экологическая карта города</title>
@@ -2338,6 +2338,159 @@ footer svg { color: #75b88c !important; }
   }
 }
 
+/* Обратная связь: спокойная графитовая поверхность и один мягкий акцент. */
+.community-section {
+  position: relative;
+  max-width: 1200px;
+  margin: 76px auto 0;
+  padding: 0 24px;
+  scroll-margin-top: 96px;
+}
+.community-section::before {
+  content: '';
+  position: absolute;
+  inset: -45px 10% auto;
+  height: 230px;
+  pointer-events: none;
+  background: radial-gradient(ellipse, rgba(124,174,151,.09), transparent 70%);
+}
+.community-inner {
+  position: relative;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid rgba(174,200,185,.17);
+  border-radius: 28px;
+  background: linear-gradient(145deg, #172320 0%, #111b19 48%, #172021 100%);
+  box-shadow: 0 22px 70px rgba(0,0,0,.18);
+}
+.community-head { max-width: 680px; }
+.community-kicker {
+  color: #abd0b2;
+  font: 500 11px/1.4 'Roboto Mono', monospace;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.community-head h2 {
+  margin: 12px 0 10px;
+  color: #f1f7ef;
+  font-size: clamp(28px, 3.1vw, 42px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.15;
+}
+.community-head p { color: #a7b8ae; font-size: 15px; line-height: 1.65; }
+.community-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 34px 0 10px;
+}
+.community-stat {
+  min-width: 0;
+  padding: 18px 20px;
+  border: 1px solid rgba(196,216,203,.12);
+  border-radius: 17px;
+  background: rgba(240,246,239,.035);
+}
+.community-stat-number {
+  display: block;
+  color: #e6f2e4;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 600;
+  letter-spacing: -.06em;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+}
+.community-stat-label { display: block; margin-top: 6px; color: #90a69a; font-size: 12px; line-height: 1.4; }
+.community-stat[hidden] { display: none; }
+.community-note { color: #9eafa5; font-size: 12px; line-height: 1.55; }
+.community-content {
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: clamp(22px, 4vw, 50px);
+  margin-top: 42px;
+}
+.community-form h3, .community-list-wrap h3 { margin-bottom: 16px; color: #ebf3e9; font-size: 18px; font-weight: 600; }
+.community-field { display: block; margin-bottom: 14px; }
+.community-field span { display: block; margin-bottom: 7px; color: #bacbc0; font-size: 13px; }
+.community-field input, .community-field textarea, .community-field select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 15px;
+  color: #f2f7f0;
+  background: #0d1815;
+  border: 1px solid rgba(189,217,196,.19);
+  border-radius: 12px;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.community-field textarea { min-height: 112px; max-height: 260px; resize: vertical; }
+.community-field input::placeholder, .community-field textarea::placeholder { color: #788b7e; }
+.community-field input:focus-visible, .community-field textarea:focus-visible, .community-field select:focus-visible {
+  border-color: #a8d3ae;
+  box-shadow: 0 0 0 3px rgba(168,211,174,.12);
+}
+.community-form-row { display: grid; grid-template-columns: minmax(0, 1fr) 130px; gap: 12px; }
+.community-submit {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  margin-top: 2px;
+  padding: 11px 19px;
+  color: #102019;
+  background: #c6dfbe;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.community-submit:hover { background: #d7edcf; transform: translateY(-2px); }
+.community-submit:disabled { opacity: .65; cursor: wait; transform: none; }
+.community-submit:focus-visible { outline: 3px solid #e9f5e3; outline-offset: 3px; }
+.community-submit svg { width: 16px; height: 16px; }
+.community-form-help { margin-top: 12px; color: #81998a; font-size: 12px; line-height: 1.5; }
+.community-feedback { min-height: 20px; margin-top: 12px; color: #c8e8c2; font-size: 13px; line-height: 1.5; }
+.community-feedback.is-error { color: #f0b8ad; }
+.community-list { display: grid; gap: 10px; }
+.community-review {
+  padding: 17px 19px;
+  border: 1px solid rgba(196,216,203,.13);
+  border-radius: 17px;
+  background: rgba(242,247,239,.045);
+}
+.community-review-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.community-review-name { color: #eaf2e7; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.community-review-date { flex-shrink: 0; color: #83988a; font: 11px 'Roboto Mono', monospace; }
+.community-review-stars { margin: 8px 0; color: #dcc58b; font-size: 13px; letter-spacing: .07em; }
+.community-review-body { color: #b5c6b8; font-size: 13px; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.community-empty { padding: 24px; color: #a8baab; border: 1px dashed rgba(196,216,203,.19); border-radius: 16px; font-size: 13px; line-height: 1.6; }
+.community-demo-label { margin-bottom: 9px; color: #a9bdad; font: 10px 'Roboto Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+.community-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 800px) {
+  .community-content { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .community-section { margin-top: 48px; padding: 0 16px; }
+  .community-inner { padding: 23px 18px; border-radius: 22px; }
+  .community-stats { grid-template-columns: repeat(2, minmax(0,1fr)); margin-top: 25px; }
+  .community-stat { padding: 15px; }
+  .community-stat:last-child:not([hidden]) { grid-column: 1 / -1; }
+  .community-content { margin-top: 32px; gap: 30px; }
+  .community-form-row { grid-template-columns: 1fr; gap: 0; }
+  .community-submit { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .community-submit { transition: none; }
+}
+
 </style>
 </head>
 <body>
@@ -2349,7 +2502,8 @@ footer svg { color: #75b88c !important; }
       <div class="logo-text">Эко<span>Иркутск</span></div>
     </a>
     <nav class="header-nav">
-      <a class="header-nav-link" href="#impactSection"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 L13.5 9.5 L20 11 L13.5 12.5 L12 19 L10.5 12.5 L4 11 L10.5 9.5 Z"/></svg> <span class="nav-label">Наш вклад</span></a>
+      <a class="header-nav-link" href="#impactSection" aria-label="Наш вклад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3 L13.5 9.5 L20 11 L13.5 12.5 L12 19 L10.5 12.5 L4 11 L10.5 9.5 Z"/></svg> <span class="nav-label">Наш вклад</span></a>
+      <a class="header-nav-link" href="#communitySection" aria-label="Отзывы"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 11.5c0 4.2-3.6 7.5-8 7.5-1 0-2-.2-2.9-.5L4 20l1.6-4.3C4.6 14.5 4 13.1 4 11.5 4 7.3 7.6 4 12 4s8 3.3 8 7.5Z"/><path d="M8.5 11.5h7"/></svg> <span class="nav-label">Отзывы</span></a>
     </nav>
     <div class="header-tagline">Карта экологических точек города</div>
   </div>
@@ -2713,6 +2867,42 @@ footer svg { color: #75b88c !important; }
     <button class="modal-close" onclick="closeModal()">Закрыть</button>
   </div>
 </div>
+
+<section class="community-section" id="communitySection" aria-labelledby="communityTitle">
+  <div class="community-inner">
+    <div class="community-head">
+      <div class="community-kicker">ЭкоИркутск / обратная связь</div>
+      <h2 id="communityTitle">Голоса города</h2>
+      <p>Нашли удобный экопункт или заметили, что можно улучшить? Оставьте короткий отзыв. Регистрация не нужна.</p>
+    </div>
+
+    <div class="community-stats" aria-label="Статистика раздела">
+      <div class="community-stat"><strong class="community-stat-number" id="communityVisits">—</strong><span class="community-stat-label" id="communityVisitsLabel">Посещения сайта</span></div>
+      <div class="community-stat"><strong class="community-stat-number" id="communityReviewsCount">—</strong><span class="community-stat-label" id="communityReviewsLabel">Отзывы</span></div>
+      <div class="community-stat" id="communityActiveStat"><strong class="community-stat-number" id="communityActive">—</strong><span class="community-stat-label">Активны за последние 5 минут</span></div>
+    </div>
+    <p class="community-note" id="communityModeNote" role="status">Загружаем статистику…</p>
+
+    <div class="community-content">
+      <form class="community-form" id="communityForm">
+        <h3>Оставить отзыв</h3>
+        <div class="community-form-row">
+          <label class="community-field"><span>Имя или псевдоним</span><input id="communityName" name="name" type="text" maxlength="32" autocomplete="nickname" placeholder="Например, Сергей"></label>
+          <label class="community-field"><span>Оценка</span><select id="communityRating" name="rating"><option value="5">5 / 5</option><option value="4">4 / 5</option><option value="3">3 / 5</option><option value="2">2 / 5</option><option value="1">1 / 5</option></select></label>
+        </div>
+        <label class="community-field"><span>Ваш отзыв</span><textarea id="communityText" name="review" minlength="15" maxlength="600" required placeholder="Расскажите, удалось ли найти нужную точку и что стоит улучшить"></textarea></label>
+        <label class="community-trap" aria-hidden="true">Не заполняйте это поле<input id="communityWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></label>
+        <button class="community-submit" type="submit" id="communitySubmit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 20 4l-5 16-3.7-6.3L3 11.5Z"/><path d="M11.3 13.7 20 4"/></svg><span id="communitySubmitLabel">Опубликовать отзыв</span></button>
+        <p class="community-form-help">Пожалуйста, не указывайте телефон, адрес и другую личную информацию.</p>
+        <p class="community-feedback" id="communityFeedback" aria-live="polite"></p>
+      </form>
+      <div class="community-list-wrap">
+        <h3>Что пишут посетители</h3>
+        <div class="community-list" id="communityList" aria-live="polite"><div class="community-empty">Отзывы загружаются…</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <strong>ЭкоИркутск</strong> — школьный проект по экологии<br>
@@ -3606,4 +3796,6 @@ document.addEventListener('keydown', e => {
 })();
 </script>
 
+<script src="community.js" defer></script>
+</body>
 </html>
